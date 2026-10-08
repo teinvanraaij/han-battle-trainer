@@ -2,9 +2,9 @@
 
 [Open de app](https://teinvanraaij.github.io/han-battle-trainer/)
 
-Oefen voor de Battle van de minor Circulaire Economie met 9 lessen duurzaamheid en 5 modules business ethics. Modi: Leer, Overhoor, Munitie, Battle en Gatenlijst. De modus Duivel is verwijderd.
+Oefen voor de Battle van de minor Circulaire Economie met 9 lessen duurzaamheid en 5 modules business ethics. Modi: Leer, Overhoor, Quiz, Battle en Gatenlijst. Munitie en Duivel zijn verwijderd. De Quiz bevat 28 meerkeuzevragen met automatische feedback en bronverwijzing.
 
-De app bevat vaste, brongebonden oefenvragen en beoordelingscriteria. Je beoordeelt je eigen antwoord; er is geen AI verbonden. Antwoorden, scores en gatenlijst worden in de browser op je eigen apparaat bewaard. Voortgang van een andere website of browser wordt niet automatisch overgenomen.
+De app bevat vaste, brongebonden oefenvragen en beoordelingscriteria. Bij open vragen beoordeel je je eigen antwoord. Bij de Quiz wordt je keuze automatisch gecontroleerd; er is geen AI verbonden. Antwoorden, scores en gatenlijst worden in de browser op je eigen apparaat bewaard. Voortgang van een andere website of browser wordt niet automatisch overgenomen.
 
 ## Installeren op je telefoon
 
