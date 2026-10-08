@@ -1,0 +1,1 @@
+{"name":"han-battle-trainer","version":"1.0.0","private":true,"description":"Oefenapp voor de HAN Battle Circulaire Economie","scripts":{"start":"node serve.cjs","test":"node check.cjs && node check-pwa.cjs"},"engines":{"node":">=20"}}

@@ -1,0 +1,9 @@
+const assert=require('assert'),vm=require('vm'),fs=require('fs');const E=require('./dist/engine.js');let ctx={window:{}};vm.runInNewContext(fs.readFileSync('dist/data.js','utf8'),ctx);const C=ctx.window.COURSE;
+assert.equal(C.lessons.length,14);assert.equal(C.topics.length,14);assert(C.topics.every(t=>t.questions.length===2));
+assert.equal(E.parseCommand('Overhoor greenwashing').query,'greenwashing');assert.equal(E.parseCommand('geen commando'),null);
+assert.equal(E.matchTopics(C.topics,'R-ladder')[0].id,'d3');assert.equal(E.matchTopics(C.topics,'alles').length,14);
+assert.deepEqual(E.score({}),{knowledge:1,insight:1});assert.equal(E.score({concept:true,example:true}).knowledge,2);assert.equal(E.score({concept:true,explanation:true,connection:true}).knowledge,3);assert.deepEqual(E.score({concept:true,explanation:true,example:true,connection:true,reasoning:true,counter:true}),{knowledge:5,insight:5});
+for(let t of C.topics){assert(C.lessons.some(l=>l.id===t.id));assert(C.topics.some(l=>l.id===t.link));assert(t.answer.split(/\s+/).length<=110);assert(t.criteria.length===3);const lesson=C.lessons.find(l=>l.id===t.id);assert(lesson.controls.length);for(let q of t.questions)assert(!lesson.text.includes(q),'Question copied literally: '+q);}
+const aliases={'Verkeer en luchtvervuiling':'luchtvervuiling','Nederlandse stikstofcrisis':'stikstofcrisis','Refurbished meubels':'refurbished producten','Smeltend ijs en albedo':'albedo','Studentenkoelkast':'koelkast','Energie-monitoringsysteem':'monitoringsysteem','H&M Conscious Collection':'Conscious Collection','“Eco-friendly” zonder criteria':'eco-friendly'};
+for(let c of C.cases){let l=C.lessons.find(l=>l.id===c.lesson);assert(l);let text=E.normalize(l.text.replace(/&amp;/g,'&'));assert(text.includes(E.normalize(aliases[c.name]||c.name)),'Case name missing: '+c.name);}
+console.log('Passed: source coverage, 28 paraphrased questions, command parsing, scoring rubric and case references.');
